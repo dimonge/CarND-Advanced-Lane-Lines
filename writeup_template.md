@@ -14,13 +14,13 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/undistort_output.png "Undistorted"
-[image2]: ./test_images/test1.jpg "Road Transformed"
-[image3]: ./examples/binary_combo_example.jpg "Binary Example"
-[image4]: ./examples/warped_straight_lines.jpg "Warp Example"
-[image5]: ./examples/color_fit_lines.jpg "Fit Visual"
-[image6]: ./examples/example_output.jpg "Output"
-[video1]: ./project_video.mp4 "Video"
+[image1]: ./output_files/calibrated_image.png "Undistorted"
+[image2]: ./output_files/undistorted_test_image.png "Road Transformed"
+[image3]: ./output_files/color_threshold_image.png "Binary Example"
+[image4]: ./output_files/warped_image.png "Warp Example"
+[image5]: ./output_files/curvature_image.png "Fit Visual"
+[image6]: ./output_files/output_test_image.png "Output"
+[video1]: ./project_video_result.mp4 "Video"
 
 ## Camera Calibration
 
@@ -99,7 +99,7 @@ The test image with and without the identified lane area on the road:
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Here's a [link to my video result](./project_video.mp4)
+Here's a [link to my video result](./project_video_result.mp4)
 
 ---
 

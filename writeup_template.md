@@ -43,35 +43,26 @@ I applied the distortion correction to the following test image:
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
-I used a combination of color and gradient thresholds to generate a binary image in code cell ____.  Here is the output of the image.
+I used a combination of color and gradient thresholds to generate a binary image in code cell No: 6 in the IPython notebook.  Here is the output of the image.
 ![alt text][image3]
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
-The code for my perspective transform includes a function called `perspective_transform()`which is in the code cell ____of the IPython notebook).  The `perspective_transform()` function takes as inputs an image (`image`), as well as source (`src`) and destination (`dst`) points.  I chose the hardcode the source and destination points in the following manner:
+The code for my perspective transform includes a function called `perspective_transform()`which is in the code cell No:- 7 in the IPython notebook.  The `perspective_transform()` function takes as inputs an image (`image`), as well as source (`src`) and destination (`dst`) points.  I chose the hardcode the source and destination points in the following manner:
 
 ```python
-src = np.float32(
-    [[(img_size[0] / 2) - 55, img_size[1] / 2 + 100],
-    [((img_size[0] / 6) - 10), img_size[1]],
-    [(img_size[0] * 5 / 6) + 60, img_size[1]],
-    [(img_size[0] / 2 + 55), img_size[1] / 2 + 100]])
+src = np.float32([
+    [[610, 450]],
+    [[680, 450]],
+    [[image_shape[0]-300, 680]],
+    [[380, 680]]
+    ])
 dst = np.float32(
-    [[(img_size[0] / 4), 0],
-    [(img_size[0] / 4), img_size[1]],
-    [(img_size[0] * 3 / 4), img_size[1]],
-    [(img_size[0] * 3 / 4), 0]])
+    [offset, 0],
+    [image_shape[0]-offset, 0],
+    [image_shape[0]-offset, image_shape[1]],
+    [offset, image_shape[1]]])
 ```
-
-This resulted in the following source and destination points:
-
-| Source        | Destination   | 
-|:-------------:|:-------------:| 
-| 585, 460      | 320, 0        | 
-| 203, 720      | 320, 720      |
-| 1127, 720     | 960, 720      |
-| 695, 460      | 960, 0        |
-
 I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
 
 ![alt text][image4]
@@ -85,7 +76,7 @@ Then I applied the convolution which maximize the number of hot pixels in each w
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-I applied the radius of curvature equation used in the lesson and the code can be found in the cell ______. The output lane lines on the test image is as follows: 
+I applied the radius of curvature equation used in the lesson and the code can be found in the cell No:- 17 in the IPython notebook. The output lane lines on the test image is as follows: 
 
 #### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
